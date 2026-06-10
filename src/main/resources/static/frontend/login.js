@@ -7,7 +7,7 @@ function login(){
     console.log(data);
 
 
-    fetch("http://localhost:8080/", {
+    fetch("https://smart-expense-management-system-fldl.onrender.com/login", {
         method : "POST",
         headers : {
             "Content-Type" : "application/json"

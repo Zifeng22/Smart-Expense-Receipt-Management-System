@@ -17,7 +17,7 @@ public class UserController {
     @Autowired
     private UserRepository repo;
 
-    @PostMapping("/")
+    @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody User user) {
         User existingUser = repo.findByUsername(user.getUsername());
 
