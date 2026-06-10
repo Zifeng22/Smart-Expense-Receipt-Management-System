@@ -8,6 +8,6 @@ public class PageController {
 
     @GetMapping("/")
     public String home() {
-        return "redirect:/login";
+        return "redirect:/frontend/login.html";
     }
 }
