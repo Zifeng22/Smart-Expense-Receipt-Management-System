@@ -1,0 +1,95 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --card-color: #f8f9fa;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+body.dark-mode {
+    --bg-color: #2e2c2c;
+    --text-color: #ffffff;
+    --card-color: #757171;
+
+}
+.table,
+.card {
+    background: var(--card-color);
+    border-radius: 12px;
+
+    border: 1px solid rgba(0,0,0,0.05);
+
+    box-shadow: 
+        0 8px 20px rgba(0,0,0,0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.448);
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+}
+
+@media (max-width: 768px) {
+
+    .navbar .container-fluid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .container-fluid div {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+}
+.chart-container{
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+}
+@media (max-width: 768px) {
+
+    .card{
+        margin-bottom: 15px;
+    }
+
+    h4, h5{
+        text-align: center;
+    }
+
+    footer{
+        padding: 20px;
+    }
+
+    .table-scroll{
+        max-height: 350px;
+    }
+
+}
+
+.table-wrapper {
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+
+    .right-panel {
+        display: none;
+    }
+
+    .left-panel {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .register-card,
+    .login-card {
+        max-width: 100%;
+    }
+}

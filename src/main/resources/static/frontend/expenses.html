@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="theme.css">
+
+    <style>
+    .container-box {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    </style>
+
+    </head>
+
+    <body>
+        <div id="msg"></div>
+        <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+
+                <a id="dashboardBtn" class="navbar-brand" href="dashboard.html">Smart Expense</a>
+
+               <div>
+                    <a id="expenseBtn" class="btn btn-link text-white" href="expenses.html">Expense</a>
+                    <a id="pieChartBtn" class="btn btn-link text-white" href="piechart.html">Pie Chart</a>
+                    <a id="settingBtn" class="btn btn-link text-white" href="setting.html">Setting</a>
+                    <a id="logoutBtn" class="btn btn-link text-danger" href="#" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container container-box">
+    
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4>Expenses</h4>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#expenseModal">
+                    + Add Expense
+                </button>            
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <input type="date" id="searchDate" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <select class="form-control" id="searchCategory">
+                        <option value="">All Categories</option>
+                        <option>Food</option>
+                        <option>Transport</option>
+                        <option>Shopping</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <input type="number" id="minAmount" class="form-control" placeholder="Min Amount">
+                    <input type="number" id="maxAmount" class="form-control" placeholder="Max Amount">
+                </div>
+
+                
+                
+            </div>
+
+            <table class="table table-responsive table-striped text-center">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th id="amountTableExpenses">Amount (RM)</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="expenseTableBody"></tbody>
+
+            </table>
+
+            <div class="col-md-4 mt-2" >
+                <button class="btn btn-danger" style="width: 50%;" onclick="resetFilters()">Show All</button>
+            </div>
+
+        </div>
+
+
+        <div class="modal fade" id="expenseModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Expense</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="mb-2">
+                            <label>Date</label>
+                            <input type="date" id="date" class="form-control">
+                        </div>
+
+                        <div class="mb-2">
+                            <label>Category</label>
+                            <select id="category" class="form-control">
+                                <option>Food</option>
+                                <option>Transport</option>
+                                <option>Shopping</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-2">
+                            <label>Description</label>
+                            <input type="text" id="description" class="form-control">
+                        </div>
+
+                        <div class="mb-2">
+                            <label>Amount</label>
+                            <input type="number" id="amount" class="form-control">
+                        </div>
+
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button class="btn btn-success" onclick="saveExpense()" id="saveBtn">Save</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+        <footer class="bg-dark text-white text-center p-4 mt-5">
+
+            <h5>About Us</h5>
+            <p>
+                Smart Expense & Receipt Management System is a student project
+                designed to simplify personal finance tracking using web technology.
+            </p>
+            <small>Developed by: CHAN ZI FENG | UTAR FICT IT IA</small>
+
+        </footer>
+
+
+
+    <script src="currency.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="expenses.js"></script>
+    <script src="setting.js"></script>
+    <script src="piechart.js"></script>
+    <script src="shared_theme.js"></script>
+    <script>
+        window.addEventListener("load", () => {
+            applyTheme(localStorage.getItem("theme") || "light");
+        });
+    </script>
+        
+    <script>
+        function logout() {
+            localStorage.removeItem("user");
+            window.location.href = "login.html";
+        }
+    </script>
+
+    </body>
+</html>

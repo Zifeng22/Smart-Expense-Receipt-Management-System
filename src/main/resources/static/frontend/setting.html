@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="theme.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a id="dashboardBtn" class="navbar-brand" href="dashboard.html">Smart Expense</a>
+            <div>
+                <a id="expenseBtn" class="btn btn-link text-white" href="expenses.html">Expense</a>
+                <a id="pieChartBtn" class="btn btn-link text-white" href="piechart.html">Pie Chart</a>
+                <a id="settingBtn" class="btn btn-link text-white" href="setting.html">Setting</a>
+                <a id="logoutBtn" class="btn btn-link text-danger" href="#" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mt-1">
+                    <div class="d-flex flex-column gap-3">
+                        <div class="card shadow-sm p-4">
+                            <h4>Setting</h4>
+                            <div class="mb-3">
+                                <h6>Appearance</h6>
+                                <select class="form-control" style="width: 50%" id="appearanceSelect">
+                                    <option value="light">Light</option>
+                                    <option value="dark">Dark</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="mt-3">
+                            <div class="card shadow-sm p-4">
+                                <h4>Preference</h4>
+                                <h6>Currency</h6>
+                                <select class="form-control" id="currencySelect" style="width: 50%;">
+                                    <option value="MYR">MYR (RM)</option>
+                                    <option value="USD">USD ($)</option>
+                                    <option value="SGD">SGD (S$)</option>
+                                    <option value="JPY">JPY (¥)</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+
+                        <div class="mt-3">
+                            <div class="card shadow-sm p-4">
+                                <div class="col">
+                                    <h4>Profile</h4>
+                                    <span><button class="btn btn-sm " data-bs-toggle="modal" data-bs-target="#editUsernameModal"><img src="templates/edit-246.png" width="30px"></button></span>
+                                    <label class="form-label"><strong>Username: </strong></label>
+                                    <span id="usernameLabel"></span>
+
+                                    <br>
+                                    <span><button class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#editPasswordModal"><img src="templates/edit-246.png" width="30px"></button></span>
+                                    <label class="form-label"><strong>Password: </strong></label>
+                                    <span id="passwordLabel">******</span>
+                                    
+                                    <br>
+                                    <span><button class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#editEmailModal"><img src="templates/edit-246.png" width="30px"></button></span>
+                                    <label class="form-label"><strong>Email: </strong></label>
+                                    <span id="emailLabel"></span>
+                                    
+                                    <br>
+                                    <span><button class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#editPhoneModal"><img src="templates/edit-246.png" width="30px"></button></span>
+                                    <label class="form-label"><strong>Phone number: </strong></label>
+                                    <span id="phoneLabel"></span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow-sm p-4">      
+                    <h5>Contact Us</h5>
+                    <p>We are here to help with any issues or suggestions.</p>
+                    <hr>
+                    <p>📧 <a href="mailto:linmonzfon@gmail.com?subject=Smart%20Expense%20Support">linmonzfon@gmail.com</a></p>
+                    <p>📞 +60 12-345 6789</p>
+                    <p>📍 Perak, Malaysia</p>
+                    
+                </div>
+                <br>
+                <div class="card shadow-sm p-3">
+                    <div class="mt-2">
+                        <h5>Location Map</h5>
+                        <iframe
+                            id="mapFrame"
+                            width="100%"
+                            height="250"
+                            style="border:0"
+                            loading="lazy"
+                            allowfullscreen
+                            src="https://www.google.com/maps?q=Universiti+Tunku+Abdul+Rahman+Kampar&output=embed">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-4 mt-5">
+
+        <h5>About Us</h5>
+        <p>
+            Smart Expense & Receipt Management System is a student project
+            designed to simplify personal finance tracking using web technology.
+        </p>
+        <small>Developed by: CHAN ZI FENG | UTAR FICT IT IA</small>
+
+    </footer>
+    
+
+
+
+        <div class="modal fade" id="editUsernameModal" tabindex="-1" aria-labelledby="editUsernameModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editUsernameModalLabel">Edit Username</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label>New Username</label>
+                        <input type="text" id="newUsername" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="saveUsername()">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="editPasswordModal" tabindex="-1" aria-labelledby="editPasswordModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editPasswordModalLabel">Edit Password</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body  ">
+                        <labe>Enter Password</labe>
+                        <input type="password" id="originalPassword" class="form-control">
+                        <label>New Password</label>
+                        <input type="password" id="newPassword" class="form-control">   
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="savePassword()">Save Changes</button>        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="editEmailModal" tabindex="-1" aria-labelledby="editEmailModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editEmailModalLabel">Edit Email</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label>New Email</label>
+                        <input type="email" id="newEmail" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="saveEmail()">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="editPhoneModal" tabindex="-1" aria-labelledby="editPhoneModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editPhoneModalLabel">Edit Phone Number</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label>New Phone Number</label>
+                        <input type="text" id="newPhone" class="form-control">  
+                    </div>  
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="savePhone()">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    
+    <script src="currency.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="expenses.js"></script>
+    <script src="setting.js"></script>
+    <script src="shared_theme.js"></script>
+    <script>
+        window.addEventListener("load", () => {
+            applyTheme(localStorage.getItem("theme") || "light");
+        });
+    </script>
+    
+    <script>
+        function logout() {
+            localStorage.removeItem("user");
+            window.location.href = "login.html";
+        }
+    </script>
+
+</body>
+</html>
