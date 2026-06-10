@@ -15,11 +15,11 @@ function saveExpense(){
         }
     }
     
-    let url = "http://localhost:8080/expenses";
+    let url = "https://smart-expense-management-system-fldl.onrender.com/expenses";
     let method = "POST";
 
     if(id){
-        url = `http://localhost:8080/expenses/${id}`;
+        url = `https://smart-expense-management-system-fldl.onrender.com/expenses/${id}`;
         method = "PUT";
     }
 
@@ -65,7 +65,7 @@ function saveExpense(){
 
 
 function loadExpenses(){
-    fetch("http://localhost:8080/expenses/" + user.userid)
+    fetch("https://smart-expense-management-system-fldl.onrender.com/expenses/" + user.userid)
     .then(res => res.json())
     .then(data => {
 
@@ -163,7 +163,7 @@ function deleteExpense(id){
     if(!confirm("Are you sure you want to delete this expense?"))
         return;
 
-    fetch(`http://localhost:8080/expenses/${id}`, {
+    fetch(`https://smart-expense-management-system-fldl.onrender.com/expenses/${id}`, {
         method : "DELETE"
     })
     .then(() => loadExpenses())

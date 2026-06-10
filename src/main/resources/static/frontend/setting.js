@@ -17,7 +17,7 @@ function loadUsers() {
         return;
     }
 
-    fetch(`http://localhost:8080/setting/${user.userid}`)
+    fetch(`https://smart-expense-management-system-fldl.onrender.com/setting/${user.userid}`)
         .then(res => res.json())
         .then(data => displayUserInfo(data))
         .catch(err => console.log(err));
@@ -34,7 +34,7 @@ function saveUsername(){
         phone : user.phone
     };
 
-    fetch(`http://localhost:8080/updateUser/${user.userid}`, {
+    fetch(`https://smart-expense-management-system-fldl.onrender.com/updateUser/${user.userid}`, {
         method : "PUT",
         headers : {
             "Content-Type" : "application/json"
@@ -91,7 +91,7 @@ function savePassword(){
         phone : user.phone
     };
 
-    fetch(`http://localhost:8080/updateUser/${user.userid}`, {
+    fetch(`https://smart-expense-management-system-fldl.onrender.com/updateUser/${user.userid}`, {
         method : "PUT",
         headers : {
             "Content-Type" : "application/json"
@@ -134,7 +134,7 @@ function saveEmail(){
         phone : user.phone
     };
 
-    fetch(`http://localhost:8080/updateUser/${user.userid}`, {
+    fetch(`https://smart-expense-management-system-fldl.onrender.com/updateUser/${user.userid}`, {
         method : "PUT",
         headers : {
             "Content-Type" : "application/json"
@@ -177,7 +177,7 @@ function savePhone(){
         phone : document.getElementById("newPhone").value
     };
 
-    fetch(`http://localhost:8080/updateUser/${user.userid}`, {
+    fetch(`https://smart-expense-management-system-fldl.onrender.com/updateUser/${user.userid}`, {
         method : "PUT",
         headers : {
             "Content-Type" : "application/json"
