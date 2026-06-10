@@ -33,4 +33,4 @@ build/
 .vscode/
 
 ### Local database credentials ###
-application.properties
+###application.properties
