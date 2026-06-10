@@ -15,7 +15,7 @@ function register() {
         password: document.getElementById("inputPassword").value,
     };
 
-    fetch("http://localhost:8080/register", {
+    fetch("https://smart-expense-management-system-fldl.onrender.com/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
