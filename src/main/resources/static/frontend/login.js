@@ -7,7 +7,7 @@ function login(){
     console.log(data);
 
 
-    fetch("http://localhost:8080/login", {
+    fetch("http://localhost:8080/", {
         method : "POST",
         headers : {
             "Content-Type" : "application/json"
