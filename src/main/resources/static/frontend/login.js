@@ -27,5 +27,10 @@ function login(){
         alert("No account found, please register first");
     });
 }
+
+document.getElementById("showPassword").addEventListener("change", function() {
+    document.getElementById("inputPassword").type =
+        this.checked ? "text" : "password";
+});
     
 
