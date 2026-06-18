@@ -26,17 +26,16 @@ function login(){
         alert("No account found, please register first");
     });
 
-       window.login = login;
+}
 
+document.addEventListener("DOMContentLoaded", function () {
     const showPassword = document.getElementById("showPassword");
     const passwordInput = document.getElementById("inputPassword");
 
-    if (showPassword) {
-        showPassword.addEventListener("change", function () {
-            passwordInput.type = this.checked ? "text" : "password";
-        });
-    }
-}
+    showPassword.addEventListener("change", function () {
+        passwordInput.type = this.checked ? "text" : "password";
+    });
+});
 
     
 
