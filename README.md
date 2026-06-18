@@ -1,209 +1,154 @@
-**💰 Smart Expense Tracker**
+# Smart Expense Management System
 
-A full-stack expense tracking web application built with Spring Boot and Vanilla JavaScript, designed to help users manage personal finances, track spending, and visualize financial data through interactive dashboards and charts.
+## Overview
 
-****
-**🚀 Live Features**
+The Smart Expense Management System is a full-stack web application designed to help users track personal expenses, manage budgets, and analyze spending patterns. The system provides an intuitive interface for users to record transactions and view financial summaries in a structured and meaningful way.
 
-🔐 User login & registration system
+This project demonstrates the integration of backend development, database management, and frontend design using modern web technologies.
 
-💸 Add, edit, and delete expenses
+---
 
-🔎 Smart filtering (date, category, amount range)
+## Features
 
-📊 Interactive dashboard analytics
+* User authentication (login/logout)
+* Add, edit, and delete expense records
+* Categorize expenses (e.g., food, transport, utilities, etc.)
+* Monthly expense summary and breakdown
+* Budget tracking and monitoring
+* Responsive user interface for desktop and mobile usage
 
-📈 Expense visualization (line & pie charts)
+---
 
-💱 Multi-currency display system
+## Tech Stack
 
-💾 Persistent user session using localStorage
+### Frontend
 
+* HTML5
+* CSS3
+* JavaScript
+* Bootstrap
 
-****
-**🛠 Tech Stack**
+### Backend
 
-**Frontend**
+* Java
+* Spring Boot
+* RESTful API
 
-HTML5
+### Database
 
-CSS3 / Bootstrap 5
+* PostgreSQL
 
-JavaScript (ES6)
+### Tools
 
-Chart.js
+* Git & GitHub
+* Render (Deployment)
 
+---
 
-    
+## System Architecture
 
-**Backend**
+The system follows a layered architecture:
 
-Java
+* Presentation Layer (Frontend UI)
+* Application Layer (Spring Boot Backend)
+* Data Layer (PostgreSQL Database)
 
-Spring Boot
+---
 
-Spring Data JPA
+## Installation & Setup
 
-RESTful APIs
+### Prerequisites
 
-MySQL
+* Java 17+
+* Maven
+* PostgreSQL database
 
+### Steps
 
-****
-**💱 Currency System**
+1. Clone the repository:
 
-The application supports multiple currencies for display purposes.
+   ```bash
+   git clone https://github.com/Zifeng22/Smart-Expense-Management-System.git
+   ```
 
+2. Configure database in `application.properties`:
 
-MYR (Base reference currency)
+   ```properties
+   spring.datasource.url=jdbc:postgresql://localhost:5432/your_database
+   spring.datasource.username=your_username
+   spring.datasource.password=your_password
+   ```
 
-USD ($)
+3. Run the application:
 
-SGD (S$)
+   ```bash
+   mvn spring-boot:run
+   ```
 
-JPY (¥)
+4. Open browser:
 
+   ```
+   http://localhost:8080
+   ```
 
-All expense values are stored in USD format in the database and converted dynamically in the UI based on user selection.
+---
 
+## Screenshots
 
-const rates = {
+### Login Page
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/84d438b2-e045-40b0-8635-1cef8f49e4c0" />
 
-    MYR: 1,
-    
-    USD: 0.24,
-    
-    SGD: 0.32,
-    
-    JPY: 27.5
-    
-};
+---
 
-****
-**📊 Dashboard Overview**
+### Register Page
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/c1e5d46d-c00e-4136-a70d-2d62594509c7" />
 
-The dashboard provides real-time financial insights:
+---
 
+### Dashboard Page
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/0f0f9a06-55b9-43dd-a6ea-53b2757abd60" />
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/17eff056-9dab-42dd-a1c0-a19ce81f9928" />
 
-Total expenses
+---
 
-Monthly spending trends
+### Expense Page
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/5549c10f-713e-4f95-8af8-ea3cb34c7927" />
 
-Highest spending category
+---
 
-Total transaction count
+### Pie Chart Page
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/6c7462ed-1eb2-493e-80e8-eb2e870ef1ab" />
 
-Budget tracking progress bar
+---
 
-****
-**📁 Expense Management**
+### Setting Page
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/dc8dce1f-b8e0-491d-b1b1-11d1596b90ca" />
 
-Users can:
+---
 
 
-Create new expense entries
+## Future Improvements
 
-Update existing records
+* Add AI-based spending insights
+* Export reports to PDF/Excel
+* Multi-user role system (admin/user)
+* Mobile application version
 
-Delete unwanted expenses
+---
 
-View all transactions in a structured table
+## Live Demo
 
+https://smart-expense-management-system-fldl.onrender.com/frontend/login.html
 
-Each expense includes:
+---
 
-Date
+## Author
 
-Category
+Chan Zi Feng
 
-Description
+Software Engineering Student
 
-Amount
+GitHub: https://github.com/Zifeng22
 
-****
-**🔎 Filtering System**
-
-Advanced client-side filtering:
-
-
-Filter by date
-
-Filter by category
-
-Filter by minimum / maximum amount
-
-Filters update results instantly without page reload.
-
-****
-**📈 Data Visualization**
-
-The system includes dynamic charts powered by Chart.js:
-
-
-📉 Monthly expense trend (Line chart)
-
-🥧 Category distribution (Pie chart)
-
-Charts update automatically based on filtered data.
-
-****
-**🧠 System Design**
-
-Frontend communicates with backend via REST API
-
-Data stored in MySQL database
-
-User session stored in browser localStorage
-
-Currency conversion handled in frontend layer
-
-****
-**📡 API Endpoints**
-
-Method	Endpoint	Description
-
-POST	/login	User login
-
-POST	/register	User registration
-
-GET	/expenses/{userId}	Get all expenses
-
-POST	/expenses	Create expense
-
-PUT	/expenses/{id}	Update expense
-
-DELETE	/expenses/{id}	Delete expense
-
-****
-**⚙️ Key Highlights**
-
-Responsive UI using Bootstrap 5
-
-Modular JavaScript architecture
-
-Real-time UI updates without refresh
-
-Clean REST API integration
-
-Interactive data visualization
-
-****
-**📌 Future Improvements**
-
-JWT authentication security
-
-Backend-based currency conversion
-
-Export reports (PDF / Excel)
-
-Mobile app version (Flutter / React Native)
-
-Advanced analytics (AI spending prediction)
-
-****
-**👨‍💻 Author**
-
-Smart Expense Tracker Project
-
-Built as a personal full-stack learning project.
+LinkedIn: https://www.linkedin.com/in/chan-zi-feng-7043703b4
 
