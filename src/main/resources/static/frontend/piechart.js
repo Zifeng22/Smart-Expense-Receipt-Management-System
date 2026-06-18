@@ -50,7 +50,11 @@ function loadPieChart(data) {
             datasets: [{
                 data: values
             }]
-        }
+        },
+        options: {
+        responsive: true,
+        maintainAspectRatio: false
+    }
     });
 
 }

@@ -63,29 +63,37 @@
         </div>
 
         <div class="card shadow-sm p-3 mt-2">
-            <div class="row">
+            <div class="row align-items-stretch">
                 <h5 class="mb-3">Expense Breakdown</h5>
 
-                <div style="height: 400px;" class="col-md-6">
-                    <canvas id="expensePieChart"></canvas>
-                </div>
-
-                <div class="card shadow-sm col-md-6">  
-                    <div class="table-wrapper">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Category</th>
-                                    <th id="amountTablePieChart">Total Amount</th>
-                                </tr>
-                            </thead>
-
-                            <tbody id="chartTableBody"></tbody>
-
-                        </table>
+                <div class="col-md-6">
+                    <div class="card shadow-sm p-3 h-100">
+                        <div class="chart-container">
+                            <canvas id="expensePieChart"></canvas>
+                        </div>
                     </div>
                     
                 </div>
+
+                <div class="col-md-6">
+                    <div class="card shadow-sm p-3 h-100">  
+                        <div class="table-wrapper">
+                            <table class="table table-wrapper">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th id="amountTablePieChart">Total Amount</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="chartTableBody"></tbody>
+
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
