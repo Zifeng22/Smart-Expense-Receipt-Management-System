@@ -23,7 +23,6 @@ function login(){
         window.location.href = "dashboard.html";
     })
     .catch(() => {
-        //document.getElementById("message").innerHTML = "No account found, please register first";
         alert("No account found, please register first");
     });
 }

@@ -28,3 +28,13 @@ function register() {
     .catch(err => console.log(err));
     
 }
+
+document.getElementById("showPassword1").addEventListener("change", function() {
+    document.getElementById("inputPassword").type =
+        this.checked ? "text" : "password";
+});
+
+document.getElementById("showPassword2").addEventListener("change", function() {
+    document.getElementById("inputPassword").type =
+        this.checked ? "text" : "password";
+});
