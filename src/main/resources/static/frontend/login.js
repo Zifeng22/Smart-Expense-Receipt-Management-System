@@ -25,11 +25,18 @@ function login(){
     .catch(() => {
         alert("No account found, please register first");
     });
+
+       window.login = login;
+
+    const showPassword = document.getElementById("showPassword");
+    const passwordInput = document.getElementById("inputPassword");
+
+    if (showPassword) {
+        showPassword.addEventListener("change", function () {
+            passwordInput.type = this.checked ? "text" : "password";
+        });
+    }
 }
 
-document.getElementById("showPassword").addEventListener("change", function() {
-    document.getElementById("inputPassword").type =
-        this.checked ? "text" : "password";
-});
     
 

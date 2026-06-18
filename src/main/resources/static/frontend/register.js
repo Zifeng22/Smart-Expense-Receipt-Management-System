@@ -1,3 +1,16 @@
+document.addEventListener("DOMContentLoaded", function () {
+
+    const checkbox = document.getElementById("showPassword1");
+    const passwordInput = document.getElementById("inputPassword");
+
+    if (checkbox) {
+        checkbox.addEventListener("change", function () {
+            passwordInput.type = this.checked ? "text" : "password";
+        });
+    }
+
+});
+
 function register() {
 
     const password = document.getElementById("inputPassword").value;
@@ -28,13 +41,3 @@ function register() {
     .catch(err => console.log(err));
     
 }
-
-document.getElementById("showPassword1").addEventListener("change", function() {
-    document.getElementById("inputPassword").type =
-        this.checked ? "text" : "password";
-});
-
-document.getElementById("showPassword2").addEventListener("change", function() {
-    document.getElementById("inputPassword").type =
-        this.checked ? "text" : "password";
-});
